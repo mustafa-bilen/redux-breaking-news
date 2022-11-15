@@ -5,7 +5,7 @@ import authSlice from "../features/authSlice";
 const PrivateRouter = () => {
   const { user } = useSelector((state) => state.auth);
 
-  return user ? <Outlet /> : <Navigate to="/login" />;
+  return user?.email ? <Outlet /> : <Navigate to="/login" />;
 };
 
 export default PrivateRouter;
